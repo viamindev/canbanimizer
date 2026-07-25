@@ -16,15 +16,18 @@
     "test": "npm run test --workspace backend"
   },
   "devDependencies": {
+    "@types/node": "^26.1.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.0.0"
+    "lint-staged": "^16.0.0",
+    "oxlint": "^1.72.0",
+    "typescript": "^7.0.0"
   },
   "lint-staged": {
     "frontend/**/*.{js,jsx,ts,tsx}": [
-      "npm exec --workspace frontend -- oxlint -c ../oxlint.base.json --"
+      "oxlint -c oxlint.base.json"
     ],
     "backend/**/*.{js,jsx,ts,tsx}": [
-      "npm exec --workspace backend -- oxlint -c ../oxlint.base.json --"
+      "oxlint -c oxlint.base.json"
     ]
   }
 }
